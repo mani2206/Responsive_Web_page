@@ -1,0 +1,38 @@
+body, html{
+    font-family: "Overpass",sans-serif;
+}
+a,a:hover, .nav-link,.nav-link:hover{
+    color: #fff;
+}
+@include media-screen-lg{
+    .nav-link:checked, .nav-link:visited, a:visited, a:checked{
+        color:#fff;
+    }
+}
+.navbar-nav{
+    .nav-item{
+        position: relative;
+        .nav-link::after{
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 8px;
+            width: 0px;
+            height: 2px;
+            background: #f93154;
+            transition: .5s ease;
+        }
+        .nav-link:hover::after{
+            width: 100%;
+            @include media-screen-lg{
+                width: 20px;
+            }
+        }
+    }
+}
+.carousel-indicators [data-mdb-target]{
+    background-color: red;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+}
